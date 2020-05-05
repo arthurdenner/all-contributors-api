@@ -21,10 +21,11 @@ export default async (req: NowRequest, res: NowResponse) => {
     const contributors: Contributor[] = await get<string>(uri).then(
       ({ data }) => JSON.parse(data).contributors
     );
+    const userContributor = contributors.find((c) => c.login === username);
 
     // https://vercel.com/docs/v2/serverless-functions/edge-caching#recommended-inlinecode
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=600');
-    res.status(200).send(contributors.some((c) => c.login === username));
+    res.status(200).send(userContributor ? userContributor.contributions : []);
   } catch (err) {
     if (err.statusCode === 404) {
       res.status(404).end();
