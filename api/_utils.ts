@@ -9,7 +9,7 @@ export const getContributors = async (
   const { repo } = req.query;
 
   if (!repo) {
-    res.status(400).send({ message: 'Provide the `repo` parameter' });
+    res.status(400).send({ message: 'Provide the `repo` query parameter' });
     return;
   }
 

@@ -6,7 +6,9 @@ export default async (req: NowRequest, res: NowResponse) => {
     const { username } = req.query;
 
     if (!username) {
-      res.status(400).send({ message: 'Provide the `username` parameter' });
+      res
+        .status(400)
+        .send({ message: 'Provide the `username` query parameter' });
       return;
     }
 
