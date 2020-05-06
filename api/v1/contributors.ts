@@ -1,5 +1,5 @@
 import { NowRequest, NowResponse } from '@now/node';
-import { getContributors } from './_utils';
+import { getContributors } from '../_utils';
 
 export default async (req: NowRequest, res: NowResponse) => {
   try {

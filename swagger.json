@@ -19,7 +19,7 @@
   ],
   "schemes": ["https"],
   "paths": {
-    "/check": {
+    "/v1/check": {
       "get": {
         "tags": ["contributors"],
         "summary": "Check contributions",
@@ -67,7 +67,7 @@
         }
       }
     },
-    "/contributions": {
+    "/v1/contributions": {
       "get": {
         "tags": ["contributors"],
         "summary": "Get contributions",
@@ -118,7 +118,7 @@
         }
       }
     },
-    "/contributors": {
+    "/v1/contributors": {
       "get": {
         "tags": ["contributors"],
         "summary": "Get contributors",

@@ -1,3 +1,7 @@
 {
-  "routes": [{ "src": "/api", "dest": "/" }]
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/api", "destination": "/" },
+    { "source": "/api/v1", "destination": "/" }
+  ]
 }

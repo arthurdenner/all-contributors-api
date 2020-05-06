@@ -1,5 +1,5 @@
 import { NowRequest, NowResponse } from '@now/node';
-import { getContributors } from './_utils';
+import { getContributors } from '../_utils';
 
 export default async (req: NowRequest, res: NowResponse) => {
   try {
@@ -18,12 +18,10 @@ export default async (req: NowRequest, res: NowResponse) => {
       return;
     }
 
-    const userContributor = contributors.find((c) => c.login === username);
-
     // https://vercel.com/docs/v2/serverless-functions/edge-caching#recommended-inlinecode
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=600');
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).send(userContributor ? userContributor.contributions : []);
+    res.status(200).send(contributors.some((c) => c.login === username));
   } catch (err) {
     if (err.statusCode === 404) {
       res.status(404).end();
