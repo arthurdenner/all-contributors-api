@@ -22,6 +22,7 @@ export default async (req: NowRequest, res: NowResponse) => {
 
     // https://vercel.com/docs/v2/serverless-functions/edge-caching#recommended-inlinecode
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=600');
+    res.setHeader('Content-Type', 'application/json');
     res.status(200).send(userContributor ? userContributor.contributions : []);
   } catch (err) {
     if (err.statusCode === 404) {

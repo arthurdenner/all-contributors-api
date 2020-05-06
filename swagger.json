@@ -1,0 +1,130 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is the spec for the serverless functions to check data according to the all-contributors spec.",
+    "version": "1.0.0",
+    "title": "all-contributors API"
+  },
+  "host": "all-contributors.now.sh",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "contributors",
+      "description": "Everything about your contributors",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://allcontributors.org"
+      }
+    }
+  ],
+  "schemes": ["https"],
+  "paths": {
+    "/check": {
+      "get": {
+        "tags": ["contributors"],
+        "summary": "Check contributions",
+        "description": "Check if user is contributor on a repo",
+        "operationId": "checkContributor",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "repo",
+            "in": "query",
+            "description": "Repository to check",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Username to check",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          "400": {
+            "description": "Missing parameters",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "404": {
+            "description": "File .all-contributorsrc not found in repository"
+          },
+          "500": {
+            "description": "Something went wrong",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/contributions": {
+      "get": {
+        "tags": ["contributors"],
+        "summary": "Get contributions",
+        "description": "Get contributions of user on a repo",
+        "operationId": "getContributions",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "repo",
+            "in": "query",
+            "description": "Repository to check",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Username to check",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "description": "Missing parameters",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "404": {
+            "description": "File .all-contributorsrc not found in repository"
+          },
+          "500": {
+            "description": "Something went wrong",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" }
+      }
+    }
+  }
+}
