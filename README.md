@@ -1,6 +1,6 @@
 # all-contributors-api
 
-Serverless functions to check data according to the [all-contributors spec](https://allcontributors.org).
+Serverless functions to check and get data from projects following the [all-contributors spec](https://allcontributors.org).
 
 Powered by [Vercel](https://vercel.com). Every response is cached for 10min (600s).
 
