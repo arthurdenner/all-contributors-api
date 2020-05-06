@@ -1,6 +1,6 @@
 {
   "name": "all-contributors-api",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Serverless functions to check data according to the all-contributors spec.",
   "author": "Arthur Denner <arthurdenner7@gmail.com>",
   "license": "MIT",
