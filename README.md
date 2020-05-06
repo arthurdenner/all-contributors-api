@@ -1,6 +1,9 @@
 # all-contributors-api
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Serverless functions to check and get data from projects following the [all-contributors spec](https://allcontributors.org).
@@ -10,10 +13,6 @@ Powered by [Vercel](https://vercel.com). Every response is cached for 10min (600
 ## API
 
 Available on [https://all-contributors.now.sh](https://all-contributors.now.sh/api).
-
-## License
-
-MIT © Arthur Denner
 
 ## Contributors ✨
 
@@ -30,6 +29,11 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+MIT © Arthur Denner
