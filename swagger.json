@@ -117,6 +117,87 @@
           }
         }
       }
+    },
+    "/contributors": {
+      "get": {
+        "tags": ["contributors"],
+        "summary": "Get contributors",
+        "description": "Get contributors by contribution type",
+        "operationId": "getContributors",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "repo",
+            "in": "query",
+            "description": "Repository to check",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Contribution type to filter contributors",
+            "type": "string",
+            "enum": [
+              "a11y",
+              "bug",
+              "blog",
+              "business",
+              "code",
+              "content",
+              "data",
+              "doc",
+              "design",
+              "example",
+              "eventOrganizing",
+              "financial",
+              "fundingFinding",
+              "ideas",
+              "infra",
+              "maintenance",
+              "platform",
+              "plugin",
+              "projectManagement",
+              "question",
+              "review",
+              "security",
+              "tool",
+              "translation",
+              "test",
+              "tutorial",
+              "talk",
+              "userTesting",
+              "video"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "description": "Missing parameters",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          },
+          "404": {
+            "description": "File .all-contributorsrc not found in repository"
+          },
+          "500": {
+            "description": "Something went wrong",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
