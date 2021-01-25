@@ -12,7 +12,7 @@ Powered by [Vercel](https://vercel.com). Every response is cached for 10min (600
 
 ## API
 
-Available on [https://all-contributors.now.sh](https://all-contributors.now.sh/api).
+Available on [https://all-contributors-api.vercel.app](https://all-contributors-api.vercel.app).
 
 ## Contributors ✨
 

@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "title": "all-contributors API"
   },
-  "host": "all-contributors.now.sh",
+  "host": "all-contributors-api.vercel.app",
   "tags": [
     {
       "name": "contributors",
